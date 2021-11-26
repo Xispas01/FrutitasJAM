@@ -12,14 +12,15 @@ public class PlayerMovementSwapkey : MonoBehaviour
 
     private bool MA;
     private bool MB;
-    private bool MD;
+    private bool MD=true;
     private bool MI;
                                                                          //Ubicacion lado Izquierdo                                                                                 //AirJumps actuales
 
     //Otro                                                                      //Contador de muertes
     public Transform SpawnPoint;                                                                        //Coordenadas para Respawn
 
-    private Animator Animator;                                                                          //El Animador del Jugador
+    private Animator Animator;
+    private Collider2D c;//El Animador del Jugador
 
 
     private bool canControl = true;                                                                     //Cooldown Control WallJump (Sirve para ser lanzado sin control)
@@ -34,8 +35,10 @@ public class PlayerMovementSwapkey : MonoBehaviour
 
     void Start()                                                                                        //Inicio Start()
     {                   
-        rb = gameObject.GetComponent<Rigidbody2D>();                                                    //Asigna el CuerpoRigido del objeto
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        //Asigna el CuerpoRigido del objeto
         //otro
+        c = GetComponentInChildren<Collider2D>();
         Animator = GetComponent<Animator>();
         //Xispas01
 
@@ -62,12 +65,13 @@ public class PlayerMovementSwapkey : MonoBehaviour
                     rb.velocity = Vector2.right * speed;
 
                     if (MD != true)
-                    {
-                        transform.Rotate(180,0,0);
+                {
+                        transform.rotation = Quaternion.Euler(0,0, 0);
                         MA = false;
                         MI = false;
                         MD = true;
-                    }
+                        MB = false;
+                }
                                                                                                 
                 }                                                                                       
             }
@@ -77,11 +81,12 @@ public class PlayerMovementSwapkey : MonoBehaviour
                     rb.velocity = Vector2.left * speed;
                     if (MI != true)
                     {
-                        transform.Rotate(-180, 0, 0);
+                        transform.rotation = Quaternion.Euler(0, 180, 0);
                         MA = false;
                         MI = true;
                         MD = false;
-                    }
+                        MB = false;
+            }
 
 
         }                                                                                       
@@ -92,11 +97,12 @@ public class PlayerMovementSwapkey : MonoBehaviour
                     rb.velocity = Vector2.up * speed;
                     if (MA != true)
                     {
-                        transform.Rotate(180, 0, 0);
+                        transform.rotation = Quaternion.Euler(0, 0, 90);
                         MA = true;
                         MI = false;
                         MD = false;
-                    }
+                        MB = false;
+            }
 
 
         }
@@ -104,14 +110,27 @@ public class PlayerMovementSwapkey : MonoBehaviour
            
            if (Input.GetKey(inputs["Down"]))                                                         //Movimiento Izquierda
                 {
-                    rb.velocity= Vector2.down * speed;
-
+                rb.velocity = Vector2.down * speed;
+                if (MB != true)
+                    {
+                        transform.rotation = Quaternion.Euler(0,0,-90);
+                        MA = false;
+                        MI = false;
+                        MD = false;
+                        MB = true;
+                    }
 
         }
+
+        if (Input.GetKey(inputs["Attack"]))                                                         //Movimiento Izquierda
+        {
            
 
-            //Reinicio velocidad eje X
-            if (Input.GetKeyUp(inputs["Right"]) || Input.GetKeyUp(inputs["Left"])                        //Revision soltar teclas movimiento
+        }
+
+
+        //Reinicio velocidad eje X
+        if (Input.GetKeyUp(inputs["Right"]) || Input.GetKeyUp(inputs["Left"])                        //Revision soltar teclas movimiento
             || (Input.GetKey(inputs["Right"]) && Input.GetKey(inputs["Left"])))                             //Revision pulsar simultaneas teclas movimiento
             {
                 Vector2 aux2D = rb.velocity;                                                            //Reinicio velocidad horizontal
