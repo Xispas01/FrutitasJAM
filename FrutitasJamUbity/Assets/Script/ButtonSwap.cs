@@ -29,7 +29,7 @@ public class ButtonSwap : MonoBehaviour
         DownP.text = SettingsSaving.keys["Down"].ToString();
         LeftP.text = SettingsSaving.keys["Left"].ToString();
         RightP.text = SettingsSaving.keys["Right"].ToString();
-        AttackP.text = SettingsSaving.keys["Down"].ToString();
+        AttackP.text = SettingsSaving.keys["Attack"].ToString();
 
     }
     
@@ -47,7 +47,7 @@ public class ButtonSwap : MonoBehaviour
         DownP.text = SettingsSaving.keys["Down"].ToString();
         LeftP.text = SettingsSaving.keys["Left"].ToString();
         RightP.text = SettingsSaving.keys["Right"].ToString();
-        AttackP.text = SettingsSaving.keys["Down"].ToString();
+        AttackP.text = SettingsSaving.keys["Attack"].ToString();
     }
 
     void OnGUI(){
