@@ -48,10 +48,11 @@ public class SettingControl : MonoBehaviour
 
             SettingsSaving.width = SettingsSaving.widthList[SettingsSaving.i];
             SettingsSaving.height = SettingsSaving.heightList[SettingsSaving.i];
-
+            
             resObj.text = SettingsSaving.widthList[SettingsSaving.i] + "x" + SettingsSaving.heightList[SettingsSaving.i];  
             Screen.SetResolution(SettingsSaving.width, SettingsSaving.height, SettingsSaving.fullscreen); 
         }
+        resObj.text = SettingsSaving.widthList[SettingsSaving.i] + "x" + SettingsSaving.heightList[SettingsSaving.i];
     }
 
     public void zSiguienteRes(){

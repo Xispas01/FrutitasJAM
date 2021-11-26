@@ -14,8 +14,8 @@ public class SettingsSaving : MonoBehaviour
 
     public static Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
     
-    public static float musicV;
-    public static float sfxV;
+    public static float musicV = 1;
+    public static float sfxV = 1;
     
     public static int i = 0;
 
