@@ -5,45 +5,29 @@ using UnityEngine;
 
 public class PlayerMovementSwapkey : MonoBehaviour
 {
-    //Xispas01
-    //variables
-    /*public float jump = 400.0f;                                                                         //Fuerza de salto*/
+
     public float speed = 2.0f;                                                                          //Fuerza de movimiento
-    public float speedLimit = 5.0f;                                                                     //Limite de velocidad
-   // public float Wj = 300.0f;                                                                           //Fuerza lateral de WallJump
 
-    public Transform pies;                                                                              //Ubicacion Pies
-    public Transform ladoD;                                                                             //Ubicacion lado Derecho
-    public Transform ladoI;                                                                             //Ubicacion lado Izquierdo
-    public int jumpsMax = 1;                                                                            //Maximos AirJumps
-    int jumpsN;                                                                                         //AirJumps actuales
 
-    //Otro
-    public int Death_Count;                                                                             //Contador de muertes
+
+    private bool MA;
+    private bool MB;
+    private bool MD;
+    private bool MI;
+                                                                         //Ubicacion lado Izquierdo                                                                                 //AirJumps actuales
+
+    //Otro                                                                      //Contador de muertes
     public Transform SpawnPoint;                                                                        //Coordenadas para Respawn
-    /*Esto es para que el Death_Count cuente con cierto retraso**/
-    /*private float LastRespawn = 0.0f;                                                                   
-    private float NextRespawn = 0.1f;*/
-    /*Necesidad de adaptar el código de animación del jugador a las necesidades del proyecto**/
+
     private Animator Animator;                                                                          //El Animador del Jugador
 
-    //Xispas01
-    /*public Vector2 limSuelo = new Vector2(0.5f, 0f);                                                    //Tamaños de boxcast Techo/suelo
-    public Vector2 limLado = new Vector2(0f, 0.5f);                                                     //Tamaños de boxcast Lados*/
-
-    /*private int ground;                                                                                 //Mascaras para raycast
-    private int wall;                                                                                   //Mascaras para raycast
-    private int wallJump;                                                                               //Mascaras para raycast*/
 
     private bool canControl = true;                                                                     //Cooldown Control WallJump (Sirve para ser lanzado sin control)
-    
-    private SpriteRenderer sprite;                                                                      //Permite flipear el personaje a la direccion que se esta moviendo
+                                                                       //Permite flipear el personaje a la direccion que se esta moviendo
 
     private Vector2 aux2D;                                                                              //Vector 2D auxiliar
 
     public Dictionary<string,KeyCode> inputs = new Dictionary<string, KeyCode>();                                //Diccionario para controles configurables
-
-    public int player;
 
     private Rigidbody2D rb;                                                                             //CuerpoRigido (Fisicas basada en fuerza y gravedad)
 
@@ -54,13 +38,13 @@ public class PlayerMovementSwapkey : MonoBehaviour
         //otro
         Animator = GetComponent<Animator>();
         //Xispas01
-        sprite =gameObject.GetComponent<SpriteRenderer>(); 
 
         //Asignacion controles
         inputs.Add("Left", SettingsSaving.keys["Left"]);
         inputs.Add("Right", SettingsSaving.keys["Right"]);                                             
         inputs.Add("Up", SettingsSaving.keys["Up"]);
         inputs.Add("Down", SettingsSaving.keys["Down"]);
+        inputs.Add("Attack", SettingsSaving.keys["Attack"]);
 
         canControl = true;                                                                              //Inicializa a true
     }
@@ -68,92 +52,85 @@ public class PlayerMovementSwapkey : MonoBehaviour
     // Update is called once per frame
     void Update()                                                                                       //Inicio Update()
     {
-        
-        SettingsSaving.deathsP1 = Death_Count;
+    
           
 
         if (PauseMenu.IsPaused==false && canControl == true)                                            //Revision de pausa Y control
         {                                                                                         
                 if (Input.GetKey(inputs["Right"]))                                                        //Movimiento Derecha
-                {                                                                                 
-                    rb.AddForce(Vector2.right * speed, ForceMode2D.Impulse);
-                    
-                    if(sprite.flipX){                                                                   //Flipea el personaje a la direccion que va a moverse
-                        sprite.flipX = false;
-                    }
+                {
+                    rb.velocity = Vector2.right * speed;
 
-                    if (rb.velocity.x >= speedLimit)                                                    //Limitacion de velocidad
-                    {                                                                                   
-                        aux2D = rb.velocity;                                                              
-                        rb.velocity = new Vector2(speedLimit, aux2D.y);                                   
-                    }                                                                                   
+                    if (MD != true)
+                    {
+                        transform.Rotate(180,0,0);
+                        MA = false;
+                        MI = false;
+                        MD = true;
+                    }
+                                                                                                
                 }                                                                                       
             }
             
            if (Input.GetKey(inputs["Left"]))                                                         //Movimiento Izquierda
-                {                                                                                       
-                    rb.AddForce(Vector2.left * speed, ForceMode2D.Impulse);     
+                {
+                    rb.velocity = Vector2.left * speed;
+                    if (MI != true)
+                    {
+                        transform.Rotate(-180, 0, 0);
+                        MA = false;
+                        MI = true;
+                        MD = false;
+                    }
 
-                    if(!sprite.flipX){                                                                  //Flipea el personaje a la direccion que va a moverse
-                        sprite.flipX = true;
-                    }                      
 
-                    if (rb.velocity.x <= speedLimit)                                                    //Limitacion de velocidad
-                    {                                                                                   
-                        aux2D = rb.velocity;                                                              
-                        rb.velocity = new Vector2(-speedLimit, aux2D.y);                                  
-                    }                                                                                   
-            }                                                                                       
+        }                                                                                       
           
 
            if (Input.GetKey(inputs["Up"]))                                                         //Movimiento Izquierda
                 {
-                    rb.AddForce(Vector2.up * speed, ForceMode2D.Impulse);
-
-                    if (!sprite.flipX)
-                    {                                                                  //Flipea el personaje a la direccion que va a moverse
-                        sprite.flipX = true;
-                    }
-
-                    if (rb.velocity.x <= speedLimit)                                                    //Limitacion de velocidad
+                    rb.velocity = Vector2.up * speed;
+                    if (MA != true)
                     {
-                        aux2D = rb.velocity;
-                        rb.velocity = new Vector2(-speedLimit, aux2D.y);
+                        transform.Rotate(180, 0, 0);
+                        MA = true;
+                        MI = false;
+                        MD = false;
                     }
-            }
+
+
+        }
 
            
            if (Input.GetKey(inputs["Down"]))                                                         //Movimiento Izquierda
                 {
-                    rb.AddForce(Vector2.down * speed, ForceMode2D.Impulse);
+                    rb.velocity= Vector2.down * speed;
 
-                    if (!sprite.flipX)
-                    {                                                                  //Flipea el personaje a la direccion que va a moverse
-                        sprite.flipX = true;
-                    }
 
-                    if (rb.velocity.y <= -speedLimit)                                                    //Limitacion de velocidad
-                    {
-                        aux2D = rb.velocity;
-                        rb.velocity = new Vector2( aux2D.y, - speedLimit);
-                    }
-            }
+        }
            
 
             //Reinicio velocidad eje X
-            if (Input.GetKeyUp(inputs["Right"]) || Input.GetKeyUp(inputs["Left"])                           //Revision soltar teclas movimiento
+            if (Input.GetKeyUp(inputs["Right"]) || Input.GetKeyUp(inputs["Left"])                        //Revision soltar teclas movimiento
             || (Input.GetKey(inputs["Right"]) && Input.GetKey(inputs["Left"])))                             //Revision pulsar simultaneas teclas movimiento
             {
                 Vector2 aux2D = rb.velocity;                                                            //Reinicio velocidad horizontal
                 rb.velocity = Vector2.zero;                                                 
             }
-        
+        if (Input.GetKeyUp(inputs["Up"]) || Input.GetKeyUp(inputs["Down"])                        //Revision soltar teclas movimiento
+       || (Input.GetKey(inputs["Up"]) && Input.GetKey(inputs["Down"])))                             //Revision pulsar simultaneas teclas movimiento
+        {
+            Vector2 aux2D = rb.velocity;                                                            //Reinicio velocidad horizontal
+            rb.velocity = Vector2.zero;
+        }
+
+
     }
 
     private void PlaySFX(string name)
     {
         float v = SettingsSaving.sfxV;
-        FindObjectOfType<AudioManager>().Play(name, v);
+        //FindObjectOfType<AudioManager>().Play(name, v);
     }
 
     //otro
