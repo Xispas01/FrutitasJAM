@@ -1,0 +1,447 @@
+fileFormatVersion: 2
+guid: 3f7ef789fd460f4438201981192d5434
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9103478532026049959
+    second: pina_full_Hojas
+  - first:
+      213: 5392322948932267892
+    second: pina_full_Hojas2
+  - first:
+      213: -4931267762285658717
+    second: pina_full_Hojas3
+  - first:
+      213: 7047118022654479117
+    second: pina_full_Hojas5
+  - first:
+      213: 8560186918385547551
+    second: pina_full_Hojas6
+  - first:
+      213: -145440100903677861
+    second: pina_full_Jump
+  - first:
+      213: -2428913263404847379
+    second: pina_full_Jump2
+  - first:
+      213: 954532301060170569
+    second: pina_full_Jump3
+  - first:
+      213: -6827515507631439769
+    second: pina_full_Jump4
+  - first:
+      213: 1400951392201918989
+    second: pina_full_Jump5
+  - first:
+      213: -2152416815167661512
+    second: pina_full_Jump6
+  - first:
+      213: -8680412782605522545
+    second: pina_full_Idle
+  - first:
+      213: -2928121168840045089
+    second: pina_full_Idle2
+  - first:
+      213: -5766288049329341420
+    second: pina_full_5
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pina_full_Hojas
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 3009
+        width: 564
+        height: 756
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95a5136e182f9a180800000000000000
+      internalID: -9103478532026049959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pina_full_Hojas2
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 3009
+        width: 564
+        height: 668
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47f6b4df62165da40800000000000000
+      internalID: 5392322948932267892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pina_full_Hojas3
+      rect:
+        serializedVersion: 2
+        x: 2232
+        y: 3024
+        width: 561
+        height: 540
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3adb0a0e81e909bb0800000000000000
+      internalID: -4931267762285658717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pina_full_Hojas5
+      rect:
+        serializedVersion: 2
+        x: 2867
+        y: 3009
+        width: 881
+        height: 896
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0bc29e11846cc160800000000000000
+      internalID: 7047118022654479117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pina_full_Hojas6
+      rect:
+        serializedVersion: 2
+        x: 3854
+        y: 2588
+        width: 1784
+        height: 1763
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2387975}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f19f05106a4ebc670800000000000000
+      internalID: 8560186918385547551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pina_full_Jump
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1512
+        width: 563
+        height: 768
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b501a81bffa4bfdf0800000000000000
+      internalID: -145440100903677861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pina_full_Jump2
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 1504
+        width: 583
+        height: 638
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deee4808144ca4ed0800000000000000
+      internalID: -2428913263404847379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pina_full_Jump3
+      rect:
+        serializedVersion: 2
+        x: 1976
+        y: 1504
+        width: 489
+        height: 858
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 943e35b021e2f3d00800000000000000
+      internalID: 954532301060170569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pina_full_Jump4
+      rect:
+        serializedVersion: 2
+        x: 2514
+        y: 1504
+        width: 492
+        height: 902
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 760482dc1dacf31a0800000000000000
+      internalID: -6827515507631439769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pina_full_Jump5
+      rect:
+        serializedVersion: 2
+        x: 3094
+        y: 1504
+        width: 532
+        height: 938
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0ac8cf5edd217310800000000000000
+      internalID: 1400951392201918989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pina_full_Jump6
+      rect:
+        serializedVersion: 2
+        x: 3677
+        y: 1496
+        width: 584
+        height: 655
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83a9a538f441122e0800000000000000
+      internalID: -2152416815167661512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pina_full_Idle
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 303
+        width: 560
+        height: 762
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89a905a09af88780800000000000000
+      internalID: -8680412782605522545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pina_full_Idle2
+      rect:
+        serializedVersion: 2
+        x: 1310
+        y: 303
+        width: 564
+        height: 768
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fddccff8f493d57d0800000000000000
+      internalID: -2928121168840045089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
